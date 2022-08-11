@@ -1,6 +1,6 @@
 module ColMinSum
 
-export colminsum, rowminsum
+export colminsum, rowminsum, xcolminsum, xrowminsum
 
 struct Credibility{T <: Real}
 	v::T
@@ -21,5 +21,11 @@ function colminsum(a::AbstractMatrix{<:Real})
 end
 
 rowminsum(a::AbstractMatrix{<:Real}) = colminsum(a')
+
+xcolminsum(a::AbstractMatrix{<:Real}, b::AbstractMatrix{<:Real}) =
+	incrediblize.(Credibility.(a)' * Credibility.(b))
+
+xrowminsum(a::AbstractMatrix{<:Real}, b::AbstractMatrix{<:Real}) =
+	xcolminsum(a', b')
 	
 end # module

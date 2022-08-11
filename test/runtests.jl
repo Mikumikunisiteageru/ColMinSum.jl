@@ -11,3 +11,5 @@ m5 = [ 10 11 17 23  4 ;
 	   22  3  9 15 16 ] .|> inv
 @test colminsum(m5) == [sum(min.(m5[:, i], m5[:, j])) for i = 1:5, j = 1:5]
 @test rowminsum(m5) == [sum(min.(m5[i, :], m5[j, :])) for i = 1:5, j = 1:5]
+@test xcolminsum(m5[:, 1:2], m5[:, 4:5]) == colminsum(m5)[1:2, 4:5]
+@test xrowminsum(m5[1:2, :], m5[4:5, :]) == rowminsum(m5)[1:2, 4:5]
