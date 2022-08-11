@@ -1,0 +1,7 @@
+name = "ColMinSum"
+uuid = "1fb0c311-6e98-430a-b7cd-feaf3c08157a"
+authors = ["Yu-Chang YANG <yang.yc.allium@gmail.com>"]
+version = "0.1.0"
+
+[deps]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
